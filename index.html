@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            .container {
+                 width:60%    
+            }
+
+            #newTask {
+                width:60%;
+            }
+
+            #addTask 
+            {
+                width:39%;
+            }
+            .list-header {
+                padding-bottom: 10px;
+            }
+            .list-group-item {
+                height: 40px;
+            }
+            .list-group-item span {
+                width: 90%;
+                float:left;
+            }
+            .list-group-item button {
+                width: 8%;
+                float:left;
+            }
+
+        </style>  
+    </head>
+    <body>
+        <div class='container text-center'>
+            <div class='list-header'>
+                <h3>My To-Do List</h3>
+                <input type='text' id='newTask'/>
+                <button id='addTask'>Add Task</button>
+            </div>
+            <ul class='list-group'>
+            </ul>
+        </div>
+        <script src='./bundle.js'></script>
+    </body>
+</html>

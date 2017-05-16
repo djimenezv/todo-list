@@ -5,7 +5,7 @@ module.exports = (function(){
         render : function(taskDescription){
             component = $('<li>');
             textComponent = $('<span>').text(taskDescription);
-            deleteComponent = $('<button>Delete</button>').on('click',this.delete);
+            deleteComponent = $('<div class=\'glyphicon glyphicon-remove\'/>').on('click',this.delete);
             component.append(textComponent);
             component.append(deleteComponent);
             component.attr('class','list-group-item');

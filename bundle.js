@@ -10337,7 +10337,7 @@ module.exports = (function(){
         render : function(taskDescription){
             component = $('<li>');
             textComponent = $('<span>').text(taskDescription);
-            deleteComponent = $('<button>Delete</button>').on('click',this.delete);
+            deleteComponent = $('<div class=\'glyphicon glyphicon-remove\'/>').on('click',this.delete);
             component.append(textComponent);
             component.append(deleteComponent);
             component.attr('class','list-group-item');
@@ -10356,7 +10356,6 @@ module.exports = (function(){
 
 var taskComponent = __webpack_require__(1);
 var $ = __webpack_require__(0);
-var rx = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"rxjs/core\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 myApp = (function(){
         var list = $('ul');
@@ -10366,18 +10365,15 @@ myApp = (function(){
             init : function (){
                 //adding events
                 $('button').on('click',this.onNewTask);
-                arrayObservable = rx.Observable.ofObjectChanges(tasks);
-                arrayObservable.subscribe(this.onNewTaskAdded);
             },
             onNewTask: function(evt) {
-                var newTask = new taskComponent();
-                var taskDescription = $('input').val();
-                var newLiItem = newTask.render(taskDescription);
-                tasks.push({'id':1,'description':'desc'});
-                list.append(newLiItem);
-            },
-            onNewTaskAdded: function(newTask){
-                console.log(newTask);
+                if($('input').val() !== '') {
+                    var newTask = new taskComponent();
+                    var taskDescription = $('input').val();
+                    var newLiItem = newTask.render(taskDescription);
+                    tasks.push({'id':1,'description':'desc'});
+                    list.append(newLiItem);
+                }
             }
         };
     }

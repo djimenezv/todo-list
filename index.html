@@ -6,7 +6,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <style>
             .container {
-                 width:60%    
+                 width:40%    
             }
 
             #newTask {
@@ -26,10 +26,17 @@
             .list-group-item span {
                 width: 90%;
                 float:left;
+                text-align: left;
             }
             .list-group-item button {
                 width: 8%;
                 float:left;
+            }
+
+            .glyphicon-remove {
+                font-size: 25px;
+                top: 0px;
+                cursor: pointer;
             }
 
         </style>  
@@ -38,8 +45,12 @@
         <div class='container text-center'>
             <div class='list-header'>
                 <h3>My To-Do List</h3>
-                <input type='text' id='newTask'/>
-                <button id='addTask'>Add Task</button>
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Add Task</button>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Task description ...">
+                </div>
             </div>
             <ul class='list-group'>
             </ul>

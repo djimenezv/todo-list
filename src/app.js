@@ -3,7 +3,6 @@ var $ = require('jquery');
 
 myApp = (function(){
         var list = $('ul');
-        var arrayObservable = null;
         var tasks = [];
         return {
             init : function (){
